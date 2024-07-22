@@ -1,6 +1,6 @@
-let gameseq = [];
+console.log("from script file");let gameseq = [];
 let userseq = [];
-let btns = ["yellow", "red", "blue", "green"];
+let btns = ["yellow", "red", "blue", "green"]; 
 
 let started = false;
 let level = 0;
@@ -19,7 +19,23 @@ const highScoreElement = document.querySelector("h3");
 const allBtns = document.querySelectorAll(".btn");
 const body = document.querySelector("body");
 let container=document.querySelector('.container');
+function start() {
+ if (!started) {
 
+        console.log("game is started!");
+
+        startSound.play();
+
+        started = true;
+
+        bgm.loop = true; // Set BGM to loop
+
+        bgm.play(); // Start playing BGM
+
+        levelUp();
+
+    }
+}
 document.addEventListener("keypress", function () {
     if (!started) {
         console.log("game is started!");
